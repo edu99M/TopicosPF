@@ -1,0 +1,43 @@
+# Obter a lista de colaborador
+GET http://localhost:3000/api/tipoRequisicao
+Content-Type: application/json
+###
+
+
+# Inserir novo colaborador
+POST http://localhost:3000/api/tipoRequisicao
+Content-Type: application/json
+
+{
+ "descricao": "labhd"
+}
+###
+
+# Excluir um tipoRequisicaoes
+DELETE http://localhost:3000/api/tipoRequisicaoesoRequisicaoes/623e4e6f62cfbd17dad03d95
+Content-Type: application/json
+###
+
+# Alterar usuário
+PUT http://localhost:3000/api/tipoRequisicaoes
+Content-Type: application/json
+
+{
+ "_id": "623e3fcea6f633ad5bb09823",
+ "nome": "Jaqson alterado",
+ "email": "jaqson@teste.com",
+ "celular": "99999-99"
+
+}
+###
+
+# Obter pelo id de tipoRequisicaoes 
+GET http://localhost:3000/api/tipoRequisicaoes/623e4025d5039cdb59a2d156
+Content-Type: application/json
+###
+
+# Obter usuários tipoRequisicaoes
+GET http://localhost:3000/api/tipoRequisicaoes/filtro/jaqson
+Content-Type: application/json
+###
+

@@ -5,7 +5,10 @@ var cors = require('cors');
 routes.use(cors({origin: '*'}));
 //routes.use(cors({origin: 'http://localhost:3001'}));
 
-//cada programa tera uma netrada em routes
+//cada programa tera uma entrada em routes
 const colaboradorRout = require("./ColaboradorRout");
 routes.use("/api", colaboradorRout);
+
+
 module.exports = routes;
+

@@ -32,8 +32,23 @@ function Usuarios() {
 
   const onClickSalvar = () => {
       console.log('Salvar ...');
-      setEditando(false);
-  }
+      if (usuario.id == null){ // inclussão
+        usuario.id = usuarios.length + 1
+        setUsuarios([...usuarios, usuario])
+        } else { // alteração
+        setUsuarios(usuarios.map((find) => (find.id === usuario.id ? usuario : find)))
+        }
+        setEditando(false);
+        }
+
+        const editar = (id) => {
+          setUsuario(usuarios.filter((usuario) => usuario.id == id)[0]);
+          setEditando(true);
+          }
+          const excluir = (id) => {
+          setUsuarios(usuarios.filter((usuario) => usuario.id !== id));
+          }
+         
   const onClickCancelar = () => {
       console.log('Cancelou ...');
       setEditando(false);
@@ -41,19 +56,21 @@ function Usuarios() {
 
 
   if (!editando){
+
     return (
       <div>
          <UsuariosList usuarios={usuarios} 
             onClickAtualizar={onClickAtualizar} 
-            onClickInserir={onClickInserir}/>
+            onClickInserir={onClickInserir}
+            editar={editar} excluir={excluir}/>
       </div >
     );
   } else {
     return (
       <div>
-         <UsuariosForm usuario={usuario} 
-            onClickSalvar={onClickSalvar} 
-            onClickCancelar={onClickCancelar}/>
+         <UsuariosForm usuario={usuario} setUsuario={setUsuario}
+          onClickSalvar={onClickSalvar} onClickCancelar={onClickCancelar} />
+
       </div >
     );
   }

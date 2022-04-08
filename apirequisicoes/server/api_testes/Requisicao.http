@@ -1,0 +1,49 @@
+# Obter a lista de colaborador
+GET http://localhost:3000/api/Requisicao
+Content-Type: application/json
+###
+
+
+# Inserir novo colaborador
+POST http://localhost:3000/api/Requisicao
+Content-Type: application/json
+
+{
+ "titulo": "o cachorro",
+ "descricao": "o cachorro",
+ "dataHoraCriada": "2022-04-02",
+ "status": "o cachorro",
+ "prazoAtendimento": "2022-04-02",
+ "TipoRequisicao": "623e65cded98361823b5d5e5",
+ "Solicitante": "623e672bac269809e342dfdd"
+}
+###
+
+# Excluir um Requisicaoes
+DELETE http://localhost:3000/api/Requisicao/623e4e6f62cfbd17dad03d95
+Content-Type: application/json
+###
+
+# Alterar usuário
+PUT http://localhost:3000/api/Requisicaoes
+Content-Type: application/json
+
+{
+ "_id": "623e3fcea6f633ad5bb09823",
+ "nome": "Jaqson alterado",
+ "email": "jaqson@teste.com",
+ "celular": "99999-99"
+
+}
+###
+
+# Obter pelo id de Requisicaoes 
+GET http://localhost:3000/api/Requisicaoes/623e4025d5039cdb59a2d156
+Content-Type: application/json
+###
+
+# Obter usuários Requisicaoes
+GET http://localhost:3000/api/Requisicaoes/filtro/jaqson
+Content-Type: application/json
+###
+

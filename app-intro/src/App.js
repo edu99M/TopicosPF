@@ -8,7 +8,6 @@ function App() {
        <Example/> 
        <br/>   
        <Usuarios/>
-
     </div>
   );
 }
